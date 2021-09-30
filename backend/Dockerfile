@@ -10,8 +10,8 @@ COPY . .
 
 EXPOSE 80
 
-ENV MONGODB_USERNAME=root
-ENV MONGODB_PASSWORD=secret
+ENV MONGODB_USERNAME=user_name
+ENV MONGODB_PASSWORD=user_password
 ENV MONGODB_URL=mongodb
 
 CMD ["npm", "start"]
