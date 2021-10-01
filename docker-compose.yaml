@@ -1,11 +1,12 @@
 version: '3.8'
 services:
-  mongodb:
-    image: 'mongo'
-    volumes:
-      - data:/data/db
-    env_file:
-      - ./env/mongo.env
+  # Switched to use MongoDB Atlas Cloud - mongodb container no longer needed
+  # mongodb:
+  #   image: 'mongo'
+  #   volumes:
+  #     - data:/data/db
+  #   env_file:
+  #     - ./env/mongo.env
   backend:
     build: ./backend
     ports:
@@ -15,8 +16,9 @@ services:
       - /app/node_modules
     env_file:
       - ./env/backend.env
-    depends_on:
-      - mongodb
+    # depends_on:
+    #   - mongodb
 
-volumes:
-  data:
+# Because mongodb container is no longer created, so as volumes.
+# volumes:
+#   data:

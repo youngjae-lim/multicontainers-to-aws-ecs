@@ -76,9 +76,10 @@ app.delete('/goals/:id', async (req, res) => {
 })
 
 // Wait for 30 seconds in order for mongodb to spin up with a new user
+// mongodb+srv://mongodbuser:<password>@myfirstcluster.bx2lt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 setTimeout(() => {
   mongoose.connect(
-    `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_URL}:27017/course-goals?authSource=admin`,
+    `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_URL}/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
